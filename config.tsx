@@ -73,7 +73,7 @@ export const config = createConfig(
     ssr: true, // more about ssr: https://www.alchemy.com/docs/wallets/react/ssr
     storage: cookieStorage, // more about persisting state with cookies: https://www.alchemy.com/docs/wallets/react/ssr#persisting-the-account-state
     enablePopupOauth: true, // must be set to "true" if you plan on using popup rather than redirect in the social login flow
-    policyId: "ec0c4a5b-66e5-44be-888c-ba492f063df3",
+    policyId: "policy_id",
   },
   uiConfig
 );
