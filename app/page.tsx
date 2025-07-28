@@ -25,13 +25,13 @@ export default function Home() {
             setAddress(acct);
 
             const walletClient = createWalletClient({
-                transport: http("https://hyperliquid-mainnet.g.alchemy.com/v2/ZVdghrmMp87L0znAW3-ldr3Ke7VuG1SR"),
+                transport: http("https://hyperliquid-mainnet.g.alchemy.com/v2/API_KEY"),
                 chain: hype,
             });
 
             const txRequest = await walletClient.prepareTransactionRequest({
                 account: acct,
-                to: "0xB7C609cFfa0e47DB2467ea03fF3e598bF59361A5",
+                to: "0x0000000000000000000000000000000000000000",
                 value: parseEther("0.0001"),
                 type: "eip1559",
             });

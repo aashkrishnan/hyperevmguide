@@ -18,8 +18,8 @@ export const hype = defineChain({
     },
     rpcUrls: {
         default: {
-            http: ['https://hyperliquid-mainnet.g.alchemy.com/v2/ZVdghrmMp87L0znAW3-ldr3Ke7VuG1SR'],
-            webSocket: ['wss://hyperliquid-mainnet.g.alchemy.com/v2/ZVdghrmMp87L0znAW3-ldr3Ke7VuG1SR'],
+            http: ['https://hyperliquid-mainnet.g.alchemy.com/v2/API_KEY'],
+            webSocket: ['wss://hyperliquid-mainnet.g.alchemy.com/v2/API_KEY'],
         },
     },
     blockExplorers: {
@@ -27,7 +27,7 @@ export const hype = defineChain({
     }
 })
 
-const API_KEY = "ZVdghrmMp87L0znAW3-ldr3Ke7VuG1SR";
+const API_KEY = "API_KEY";
 if (!API_KEY) {
   throw new Error("NEXT_PUBLIC_ALCHEMY_API_KEY is not set");
 }
