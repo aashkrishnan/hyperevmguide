@@ -3,7 +3,7 @@ import {
     cookieStorage,
     createConfig, useAuthContext,
 } from "@account-kit/react";
-import {alchemy, arbitrumSepolia, mainnet} from "@account-kit/infra";
+import {alchemy, arbitrumSepolia, defineAlchemyChain, mainnet} from "@account-kit/infra";
 import { QueryClient } from "@tanstack/react-query";
 
 import { defineChain } from 'viem'
@@ -38,15 +38,11 @@ if (!SPONSORSHIP_POLICY_ID) {
   throw new Error("NEXT_PUBLIC_ALCHEMY_POLICY_ID is not set");
 }
 
-// export const ConnectEOAButton = () => {
-//     const { setAuthStep } = useAuthContext();
-//
-//     return (
-//         <button onClick={() => setAuthStep({ type: "pick_eoa" })}>
-//     Connect Wallet
-//     </button>
-// );
-// };
+const chain = defineAlchemyChain({
+    chain: hype,
+    rpcBaseUrl: `https://hyperliquid-mainnet.g.alchemy.com/v2/API_KEY`,
+});
+
 
 const uiConfig: AlchemyAccountsUIConfig = {
   illustrationStyle: "outline",
@@ -72,9 +68,8 @@ const uiConfig: AlchemyAccountsUIConfig = {
 
 export const config = createConfig(
   {
-    transport: alchemy({ apiKey: "ZVdghrmMp87L0znAW3-ldr3Ke7VuG1SR" }),
-    // Note: This quickstart is configured for Arbitrum Sepolia.
-    chain: mainnet,
+    transport: alchemy({ apiKey: "API_KEY" }),
+    chain: chain,
     ssr: true, // more about ssr: https://www.alchemy.com/docs/wallets/react/ssr
     storage: cookieStorage, // more about persisting state with cookies: https://www.alchemy.com/docs/wallets/react/ssr#persisting-the-account-state
     enablePopupOauth: true, // must be set to "true" if you plan on using popup rather than redirect in the social login flow
